@@ -18,6 +18,9 @@ import java.lang.Object;
 
 public abstract class ItemPhotoBinding extends ViewDataBinding {
   @NonNull
+  public final View line;
+
+  @NonNull
   public final ImageView thumbnail;
 
   @NonNull
@@ -26,9 +29,10 @@ public abstract class ItemPhotoBinding extends ViewDataBinding {
   @Bindable
   protected Photo mPhoto;
 
-  protected ItemPhotoBinding(Object _bindingComponent, View _root, int _localFieldCount,
+  protected ItemPhotoBinding(Object _bindingComponent, View _root, int _localFieldCount, View line,
       ImageView thumbnail, TextView title) {
     super(_bindingComponent, _root, _localFieldCount);
+    this.line = line;
     this.thumbnail = thumbnail;
     this.title = title;
   }

@@ -6,6 +6,7 @@ import androidx.databinding.DataBindingUtil;
 import com.example.assignment.R;
 import com.example.assignment.databinding.ActivityDetailBinding;
 import com.example.assignment.models.Photo;
+import com.example.assignment.utils.Constant;
 import com.squareup.picasso.Picasso;
 import dagger.hilt.android.AndroidEntryPoint;
 

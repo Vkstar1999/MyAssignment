@@ -26,15 +26,19 @@ public abstract class ActivityDetailBinding extends ViewDataBinding {
   @NonNull
   public final TextView title;
 
+  @NonNull
+  public final TextView titleTxt;
+
   @Bindable
   protected Photo mPhoto;
 
   protected ActivityDetailBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      TextView description, ImageView headerImage, TextView title) {
+      TextView description, ImageView headerImage, TextView title, TextView titleTxt) {
     super(_bindingComponent, _root, _localFieldCount);
     this.description = description;
     this.headerImage = headerImage;
     this.title = title;
+    this.titleTxt = titleTxt;
   }
 
   public abstract void setPhoto(@Nullable Photo photo);

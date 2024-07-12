@@ -3344,6 +3344,7 @@ id honorRequest
 id horizontal_only
 id icon
 id icon_group
+id idPBLoading
 id ifRoom
 id ignore
 id ignoreRequest
@@ -3365,6 +3366,7 @@ id layout
 id left
 id leftToRight
 id legacy
+id line
 id line1
 id line3
 id linear
@@ -3599,6 +3601,7 @@ id time
 id title
 id titleDividerNoCustom
 id title_template
+id title_txt
 id toggle
 id top
 id topPanel
@@ -3754,7 +3757,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_detail
 layout activity_main
-layout activity_spalsh
+layout activity_splash
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog

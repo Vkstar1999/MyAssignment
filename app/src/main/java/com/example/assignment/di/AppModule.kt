@@ -4,6 +4,7 @@ import com.example.assignment.domain.MyRepository
 import com.example.assignment.networks.ApiService
 import com.example.assignment.networks.MyRepositoryImplementation
 import com.example.assignment.repository.PhotoRepository
+import com.example.assignment.utils.Constant
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -19,7 +20,6 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class) //dependency will live as as the application does
 object AppModule {
 
-    private const val BASE_URL =  "https://jsonplaceholder.typicode.com"
 
     @Provides
     @Singleton //marks the scope of the dependency. i.e will have the single instance throughOut
@@ -36,7 +36,7 @@ object AppModule {
             .build()
 
         return Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(Constant.BASE_URL)
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()

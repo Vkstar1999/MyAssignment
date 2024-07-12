@@ -10,18 +10,4 @@ interface ApiService {
     @GET("/photos")
     suspend fun getPhotos(): Response<List<Photo>>
 
-    companion object {
-        var retrofitService: ApiService? = null
-
-        fun getInstance() : ApiService {
-            if (retrofitService == null) {
-                val retrofit = Retrofit.Builder()
-                    .baseUrl("https://jsonplaceholder.typicode.com")
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build()
-                retrofitService = retrofit.create(ApiService::class.java)
-            }
-            return retrofitService!!
-        }
-    }
 }

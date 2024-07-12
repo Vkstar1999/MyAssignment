@@ -4,6 +4,7 @@ package com.example.assignment.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,14 +17,18 @@ import java.lang.Object;
 
 public abstract class ActivityMainBinding extends ViewDataBinding {
   @NonNull
+  public final ProgressBar idPBLoading;
+
+  @NonNull
   public final RecyclerView recyclerView;
 
   @NonNull
   public final TextView title;
 
   protected ActivityMainBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      RecyclerView recyclerView, TextView title) {
+      ProgressBar idPBLoading, RecyclerView recyclerView, TextView title) {
     super(_bindingComponent, _root, _localFieldCount);
+    this.idPBLoading = idPBLoading;
     this.recyclerView = recyclerView;
     this.title = title;
   }

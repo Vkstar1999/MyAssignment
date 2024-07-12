@@ -30,5 +30,15 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/thumbnail"
             app:layout_constraintEnd_toEndOf="parent"/>
+
+        <View
+            android:id="@+id/line"
+            app:layout_constraintTop_toBottomOf="@+id/thumbnail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@color/black"
+            android:layout_marginTop="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
          

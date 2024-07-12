@@ -3,6 +3,7 @@ package com.example.assignment.module.main
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -15,14 +16,14 @@ import com.example.assignment.databinding.ActivityMainBinding
 import com.example.assignment.module.detail.DetailActivity
 import com.example.assignment.networks.ApiService
 import com.example.assignment.repository.PhotoRepository
-import com.example.assignment.utils.PhotoViewModelFactory
+import com.example.assignment.utils.Constant
 import com.example.assignment.viewmodels.PhotoViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-
+    val TAG="MainActivity::"
     private lateinit var binding: ActivityMainBinding
     private lateinit var adapter: PhotoAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,11 +34,12 @@ class MainActivity : AppCompatActivity() {
         viewModel.getFetchPhotos()
 
         viewModel.photosListLiveData.observe(this, Observer {
-            Log.d("MainActivity", "This is the response list ${it.body()}")
+            binding.idPBLoading.visibility=View.GONE
+            Log.d(TAG, "This is the response list ${it.body()}")
             binding.recyclerView.layoutManager = LinearLayoutManager(this)
             adapter = PhotoAdapter { photo ->
                 val intent = Intent(this, DetailActivity::class.java).apply {
-                    putExtra("photo", photo)
+                    putExtra(Constant.photo, photo)
                 }
                 startActivity(intent)
             }

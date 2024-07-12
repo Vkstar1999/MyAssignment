@@ -14,9 +14,10 @@ public class ActivityDetailBindingImpl extends ActivityDetailBinding  {
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.headerImage, 1);
-        sViewsWithIds.put(R.id.title, 2);
-        sViewsWithIds.put(R.id.description, 3);
+        sViewsWithIds.put(R.id.title_txt, 1);
+        sViewsWithIds.put(R.id.headerImage, 2);
+        sViewsWithIds.put(R.id.title, 3);
+        sViewsWithIds.put(R.id.description, 4);
     }
     // views
     @NonNull
@@ -27,13 +28,14 @@ public class ActivityDetailBindingImpl extends ActivityDetailBinding  {
     // Inverse Binding Event Handlers
 
     public ActivityDetailBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 4, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 5, sIncludes, sViewsWithIds));
     }
     private ActivityDetailBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
+            , (android.widget.TextView) bindings[4]
+            , (android.widget.ImageView) bindings[2]
             , (android.widget.TextView) bindings[3]
-            , (android.widget.ImageView) bindings[1]
-            , (android.widget.TextView) bindings[2]
+            , (android.widget.TextView) bindings[1]
             );
         this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
         this.mboundView0.setTag(null);
