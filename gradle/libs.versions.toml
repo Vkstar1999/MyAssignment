@@ -3,6 +3,7 @@ agp = "8.5.0"
 comSquareupRetrofit2Retrofit = "2.9.0"
 dagger = "2.40.5"
 databindingRuntime = "8.5.0"
+hiltAndroid = "2.44"
 kotlin = "1.9.0"
 coreKtx = "1.13.1"
 junit = "4.13.2"
@@ -11,6 +12,7 @@ espressoCore = "3.6.0"
 appcompat = "1.7.0"
 kotlinParcelizeRuntime = "'1.8.0'"
 lifecycleViewmodelKtx = "2.8.3"
+loggingInterceptorVersion = "4.5.0"
 material = "1.12.0"
 activity = "1.9.0"
 constraintlayout = "2.1.4"
@@ -27,6 +29,8 @@ com-squareup-retrofit2-retrofit2 = { module = "com.squareup.retrofit2:retrofit",
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "comSquareupRetrofit2Retrofit" }
 dagger = { module = "com.google.dagger:dagger", version.ref = "dagger" }
 dagger-compiler = { module = "com.google.dagger:dagger-compiler", version.ref = "dagger" }
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
+hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltAndroid" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -35,6 +39,7 @@ kotlin-parcelize-runtime = { module = "org.jetbrains.kotlin:kotlin-parcelize-run
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+okhttp3-logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "loggingInterceptorVersion" }
 picasso = { module = "com.squareup.picasso:picasso", version.ref = "picasso" }
 
 [plugins]

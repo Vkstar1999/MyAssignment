@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
     id("kotlin-parcelize")
 }
 
@@ -42,8 +43,8 @@ android {
         //noinspection DataBindingWithoutKapt
         dataBinding = true
     }
-
 }
+
 
 dependencies {
 
@@ -55,6 +56,21 @@ dependencies {
     // Retrofit
     implementation(libs.com.squareup.retrofit2.retrofit2)
     implementation(libs.converter.gson)
+
+    /*implementation(libs.hilt.android)
+    kapt(libs.hilt.android.compiler)*/
+    implementation(libs.okhttp3.logging.interceptor)
+    //Dagger - Hilt
+
+    implementation("com.google.dagger:hilt-android:2.44")
+    kapt("com.google.dagger:hilt-android-compiler:2.44")
+    /*implementation("com.google.dagger:hilt-android:2.51")
+    //kapt("com.google.dagger:hilt-compiler:2.51")
+*//*
+    kapt("androidx.hilt:hilt-compiler:1.2.0")
+*//*
+    annotationProcessor("com.google.dagger:hilt-android:2.51")*/
+
     /*// Dagger 2
     implementation("com.google.dagger:dagger:2.28.1")
     kapt("com.google.dagger:dagger-compiler:2.28.1")
@@ -78,4 +94,7 @@ dependencies {
     implementation(libs.kotlin.parcelize.runtime)
 
 
+}
+kapt {
+    correctErrorTypes = true
 }

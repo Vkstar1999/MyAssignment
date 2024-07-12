@@ -1,28 +1,27 @@
 package com.example.assignment.viewmodels
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.assignment.models.Photo
 import com.example.assignment.repository.PhotoRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import retrofit2.Response
+import javax.inject.Inject
 
-class PhotoViewModel /*@Inject constructor*/(private val repository: PhotoRepository) : ViewModel() {
-    private val _photos = MutableLiveData<List<Photo>>()
-    val photos: LiveData<List<Photo>> get() = _photos
+@HiltViewModel
+class PhotoViewModel @Inject constructor(private val repository: PhotoRepository) : ViewModel() {
+    val photosListLiveData : MutableLiveData<Response<List<Photo>>> = MutableLiveData()
 
-    init {
-        fetchPhotos()
-    }
 
-    private fun fetchPhotos() {
+
+    fun getFetchPhotos(){
         viewModelScope.launch {
-            try {
-                _photos.value = repository.getPhotos()
-            } catch (e: Exception) {
-                // Handle error
-            }
+            Log.d("ProductFragment" , "From productViewModel")
+            photosListLiveData.value = repository.doNetworkCal()
         }
     }
 }
