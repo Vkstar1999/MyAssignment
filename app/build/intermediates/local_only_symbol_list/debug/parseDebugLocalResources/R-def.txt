@@ -6,11 +6,13 @@ drawable ic_launcher_background
 drawable ic_launcher_foreground
 id description
 id headerImage
+id main
 id recyclerView
 id thumbnail
 id title
 layout activity_detail
 layout activity_main
+layout activity_spalsh
 layout item_photo
 mipmap ic_launcher
 mipmap ic_launcher_round

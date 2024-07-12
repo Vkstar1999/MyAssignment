@@ -13,25 +13,26 @@ import dagger.internal.ScopeMetadata;
 @DaggerGenerated
 @SuppressWarnings({
     "unchecked",
-    "rawtypes"
+    "rawtypes",
+    "KotlinInternal",
+    "KotlinInternalInJava",
+    "cast"
 })
 public final class AppModule_ProvideMyApiFactory implements Factory<ApiService> {
-  private final AppModule module;
-
-  public AppModule_ProvideMyApiFactory(AppModule module) {
-    this.module = module;
-  }
-
   @Override
   public ApiService get() {
-    return provideMyApi(module);
+    return provideMyApi();
   }
 
-  public static AppModule_ProvideMyApiFactory create(AppModule module) {
-    return new AppModule_ProvideMyApiFactory(module);
+  public static AppModule_ProvideMyApiFactory create() {
+    return InstanceHolder.INSTANCE;
   }
 
-  public static ApiService provideMyApi(AppModule instance) {
-    return Preconditions.checkNotNullFromProvides(instance.provideMyApi());
+  public static ApiService provideMyApi() {
+    return Preconditions.checkNotNullFromProvides(AppModule.INSTANCE.provideMyApi());
+  }
+
+  private static final class InstanceHolder {
+    private static final AppModule_ProvideMyApiFactory INSTANCE = new AppModule_ProvideMyApiFactory();
   }
 }

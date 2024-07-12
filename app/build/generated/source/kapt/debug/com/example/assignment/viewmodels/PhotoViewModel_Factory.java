@@ -13,7 +13,10 @@ import javax.inject.Provider;
 @DaggerGenerated
 @SuppressWarnings({
     "unchecked",
-    "rawtypes"
+    "rawtypes",
+    "KotlinInternal",
+    "KotlinInternalInJava",
+    "cast"
 })
 public final class PhotoViewModel_Factory implements Factory<PhotoViewModel> {
   private final Provider<PhotoRepository> repositoryProvider;

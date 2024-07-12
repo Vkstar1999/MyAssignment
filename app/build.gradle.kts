@@ -3,7 +3,8 @@ import org.jetbrains.kotlin.gradle.internal.Kapt3GradleSubplugin.Companion.isKap
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-    id("kotlin-kapt")
+    kotlin("kapt")
+    id("com.google.devtools.ksp")
     id("com.google.dagger.hilt.android")
     id("kotlin-parcelize")
 }
@@ -62,8 +63,9 @@ dependencies {
     implementation(libs.okhttp3.logging.interceptor)
     //Dagger - Hilt
 
-    implementation("com.google.dagger:hilt-android:2.44")
-    kapt("com.google.dagger:hilt-android-compiler:2.44")
+    implementation("com.google.dagger:hilt-android:2.51.1")
+    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
+    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
     /*implementation("com.google.dagger:hilt-android:2.51")
     //kapt("com.google.dagger:hilt-compiler:2.51")
 *//*

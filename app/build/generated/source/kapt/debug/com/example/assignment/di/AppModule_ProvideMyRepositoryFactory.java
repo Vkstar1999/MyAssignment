@@ -15,29 +15,28 @@ import javax.inject.Provider;
 @DaggerGenerated
 @SuppressWarnings({
     "unchecked",
-    "rawtypes"
+    "rawtypes",
+    "KotlinInternal",
+    "KotlinInternalInJava",
+    "cast"
 })
 public final class AppModule_ProvideMyRepositoryFactory implements Factory<MyRepository> {
-  private final AppModule module;
-
   private final Provider<ApiService> apiProvider;
 
-  public AppModule_ProvideMyRepositoryFactory(AppModule module, Provider<ApiService> apiProvider) {
-    this.module = module;
+  public AppModule_ProvideMyRepositoryFactory(Provider<ApiService> apiProvider) {
     this.apiProvider = apiProvider;
   }
 
   @Override
   public MyRepository get() {
-    return provideMyRepository(module, apiProvider.get());
+    return provideMyRepository(apiProvider.get());
   }
 
-  public static AppModule_ProvideMyRepositoryFactory create(AppModule module,
-      Provider<ApiService> apiProvider) {
-    return new AppModule_ProvideMyRepositoryFactory(module, apiProvider);
+  public static AppModule_ProvideMyRepositoryFactory create(Provider<ApiService> apiProvider) {
+    return new AppModule_ProvideMyRepositoryFactory(apiProvider);
   }
 
-  public static MyRepository provideMyRepository(AppModule instance, ApiService api) {
-    return Preconditions.checkNotNullFromProvides(instance.provideMyRepository(api));
+  public static MyRepository provideMyRepository(ApiService api) {
+    return Preconditions.checkNotNullFromProvides(AppModule.INSTANCE.provideMyRepository(api));
   }
 }
