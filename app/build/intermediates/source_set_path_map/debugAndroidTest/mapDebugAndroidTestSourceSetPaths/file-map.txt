@@ -1,0 +1,5 @@
+com.example.assignment.test.app-core-1.6.0-0 C:\Users\User\.gradle\caches\transforms-4\6cedeedf556f5f9cef31b99cfe0eceda\transformed\core-1.6.0\res
+com.example.assignment.test.app-androidTest-1 E:\Android Assignment\app\build\generated\res\resValues\androidTest\debug
+com.example.assignment.test.app-mergeDebugAndroidTestResources-2 E:\Android Assignment\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.example.assignment.test.app-mergeDebugAndroidTestResources-3 E:\Android Assignment\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.example.assignment.test.app-debugAndroidTest-4 E:\Android Assignment\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources
